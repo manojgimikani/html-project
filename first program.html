@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Manoj">
+	<title>My New Website</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			font-family: Arial, sans-serif;
+			background-color: rgb(12, 24, 45);
+			background-image:
+				radial-gradient(circle at 15% 20%, rgba(72, 190, 190, 0.35) 0, transparent 24%),
+				radial-gradient(circle at 85% 75%, rgba(235, 125, 90, 0.3) 0, transparent 26%),
+				radial-gradient(circle at 50% 45%, rgba(100, 95, 210, 0.2) 0, transparent 32%),
+				linear-gradient(135deg, rgb(12, 24, 45), rgb(32, 24, 64));
+			background-attachment: fixed;
+			color: white;
+			text-align: center;
+			animation: pageAppear 0.8s ease-out;
+		}
+
+		#login-screen {
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+		}
+
+		.login-box {
+			width: min(100%, 360px);
+			padding: 32px;
+			background-color: white;
+			border-radius: 8px;
+			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+		}
+
+		.login-box h1 {
+			font-size: 32px;
+		}
+
+		.login-box input {
+			display: block;
+			width: 100%;
+			margin: 12px 0;
+			padding: 12px;
+			border: 1px solid rgb(180, 190, 195);
+			border-radius: 6px;
+			font-size: 16px;
+		}
+
+		#login-error {
+			color: rgb(180, 35, 35);
+			font-size: 16px;
+		}
+
+		#website-content {
+			display: none;
+		}
+
+		@keyframes pageAppear {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		header {
+			padding: 24px;
+			background-color: rgb(20, 90, 125);
+			color: white;
+		}
+
+		main {
+			min-height: 70vh;
+			padding: 80px 20px;
+		}
+
+		h1 {
+			margin: 0 0 16px;
+			font-size: 48px;
+		}
+
+		p {
+			font-size: 20px;
+		}
+
+		button,
+		a {
+			display: inline-block;
+			padding: 12px 20px;
+			border-radius: 6px;
+			font-size: 16px;
+		}
+
+		button {
+			border: 0;
+			background-color: rgb(20, 90, 125);
+			color: rgb(34, 32, 32);
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: rgb(12, 60, 85);
+		}
+
+		a {
+			color: rgb(165, 174, 178);
+		}
+
+		.link-animation {
+			transition: transform 0.2s, color 0.2s;
+		}
+
+		.link-animation:hover {
+			transform: scale(1.08);
+			color: rgb(12, 60, 85);
+		}
+
+		.link-animation:active {
+			animation: linkPulse 0.4s ease;
+		}
+
+		@keyframes linkPulse {
+			50% {
+				transform: scale(1.2);
+			}
+		}
+
+		footer {
+			padding: 16px;
+			background-color: rgb(20, 55, 90);
+			color: white;
+		}
+
+		body.dark-theme footer {
+			background-color: rgb(35, 20, 50);
+		}
+	</style>
+</head>
+<body>
+	<section id="login-screen">
+		<form class="login-box" onsubmit="login(event)">
+			<h1>Sign in</h1>
+			<p>Enter your mobile number to open the website.</p>
+			<input id="mobile-number" type="tel" inputmode="numeric" placeholder="Mobile number" pattern="[0-9]{10}" maxlength="10" required>
+			<button type="submit">Continue</button>
+			<p id="login-error"></p>
+		</form>
+	</section>
+
+	<div id="website-content">
+		<header>
+			<strong onclick="document.body.classList.toggle('dark-theme')">My New Website</strong>
+		</header>
+
+		<main>
+			<h1> Hi, I'am manoj</h1>
+			<p id="message">[ Explore My Website ]</p>
+			<button onclick="document.getElementById('message').textContent = 'You are doing great!'">
+				Click here
+			</button>
+			<p><a class="link-animation" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Visit Instagram</a></p>
+		</main>
+
+		<footer>Made by your friend</footer>
+	</div>
+
+	<script>
+		function login(event) {
+			event.preventDefault();
+			const mobileNumber = document.getElementById('mobile-number').value;
+			const error = document.getElementById('login-error');
+			const registeredMobileNumber = '7569365963';
+
+			if (mobileNumber === registeredMobileNumber) {
+				document.getElementById('login-screen').style.display = 'none';
+				document.getElementById('website-content').style.display = 'block';
+			} else {
+				error.textContent = 'This mobile number is not valid. Please try again.';
+			}
+		}
+	</script>
+</body>
+</html>
