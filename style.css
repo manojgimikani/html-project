@@ -1,0 +1,113 @@
+*{
+    font-family:monospace;
+
+}
+
+
+body{
+
+
+    margin:0;
+}
+section{
+    background-color:rgb(114, 114, 229);
+    font-size:20px;
+    text-align:center;
+    border:2px solid black;
+    padding:10px;
+    margin:20px;
+    height:200px;
+    color:white;
+
+
+
+
+
+}
+section button{
+    background-color:darkgreen;
+    color:rgb(231, 221, 221);
+    border:none;
+    padding:10px 20px;
+    font-size:16px;
+    cursor:pointer
+
+}
+section button:hover{
+    
+        background-color:rgb(175, 199, 21);
+        color:white;
+    }
+
+div{
+    background-color:rgb(146, 213, 236);
+    padding:20px;
+    font-size:20px;
+    color:blue;
+    margin:5px;
+    border:2px solid black;
+    text-align:center;
+    height:100vh;
+
+
+
+}
+img{
+    height:200px;
+}
+h1{
+    color:red;
+}
+    
+
+main{
+    padding:20px;
+    margin: bottom 20px;
+}
+    
+
+
+
+.skills{
+
+    background-color:rgb(146, 213, 236);
+    font-size:20px;
+    border:2px solid black;
+    height:100vh;
+    color:blue;
+}
+.project{
+    background-color:rgb(146, 213, 236);
+    font-size:20px;
+    border:2px solid black;
+    height:100vh;
+    color:blue;
+.name{
+    cursor:pointer;
+    border-radius: 20px;
+
+}
+}
+.submitbutton{
+
+    border-radius:20px;
+    height:50px;
+    width:50px;
+        background-color: blue;
+    color: white;
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    cursor:pointer;
+
+}
+footer{
+    background-color:rgb(14, 14, 15);
+    font-size:20px;
+    border:2px solid black;
+    height:200px;
+    color:blue;
+    padding:20px;
+    text-align:center;
+}
+
